@@ -5,18 +5,19 @@ public class CartItems {
 
     //add property
     private Product product;
-    private int quality;
+    private int quantity;
 
 
     //add constructor
 
-    public CartItems(Product product, int quality) {
+    public CartItems(Product product, int quantity) {
         this.product = product;
-        this.quality = 1;
+        this.quantity = quantity;
     }
 
 
     //add get set
+
 
     public Product getProduct() {
         return product;
@@ -26,16 +27,18 @@ public class CartItems {
         this.product = product;
     }
 
-    public int getQuality() {
-        return quality;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuality(int quality) {
-        this.quality = quality;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     // add increasequantity
-
+public void increaseQuantity() {
+        qu
+}
 
     //add get line total
 }
