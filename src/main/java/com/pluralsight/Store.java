@@ -12,7 +12,22 @@ public class Store {
 
 
     //load the given csv with try catch
-    public void loadProducts(){
+    public void loadProducts() {
+        try {
+            //add buff and file reader
+            BufferedReader reader = new BufferedReader(new FileReader("products.csv"));
+            //add string
+            String input;
 
+            //add reader
+            reader.readLine();
+
+            //add while statement
+            while ((input = reader.readLine()) != null) {
+
+                //add tokens statement to format user input
+                String[] tokens = input.split("\\|");
+            }
+        }
     }
 }
