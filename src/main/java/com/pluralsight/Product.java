@@ -52,4 +52,16 @@ public class Product {
     public void setDepartment(String department) {
         this.department = department;
     }
-}
+
+    //add a tostring
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "sku='" + sku + " | " +
+                 name + " | $" +
+                 price + " | " +
+                department;
+        }
+    }
+
