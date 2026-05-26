@@ -33,4 +33,9 @@ public class CartItems {
     public void setQuality(int quality) {
         this.quality = quality;
     }
+
+    // add increasequantity
+
+
+    //add get line total
 }
