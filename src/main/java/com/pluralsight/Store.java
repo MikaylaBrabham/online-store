@@ -27,7 +27,28 @@ public class Store {
 
                 //add tokens statement to format user input
                 String[] tokens = input.split("\\|");
+
+                //add parse for sku
+                String sku = tokens[0];
+
+                //parse name
+                String name = tokens[1];
+
+                //parse price
+                double price = Double.parseDouble(tokens[2]);
+
+                //parse department
+                String department = tokens[3];
+
+                //parse full product
+                Product product = new Product(sku, name, price, department);
+
+                //add inventory product
+                inventory.add(product);
             }
+            //close reader
+            reader.close();
         }
+        //add catch
     }
 }
