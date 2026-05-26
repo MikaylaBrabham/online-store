@@ -55,4 +55,13 @@ public class Store {
             System.out.println("Error Loading");
         }
     }
+    //display products
+    public void displayProducts() {
+        for (Product product : inventory) {
+            System.out.println(product);
+        }
+    }
+
+    //search products
+
 }
