@@ -35,7 +35,7 @@ public class Store {
                 String name = tokens[1];
 
                 //parse price
-                double price = Double.parseDouble(tokens[2]);
+                float price = Float.parseFloat(tokens[2]);
 
                 //parse department
                 String department = tokens[3];
@@ -51,7 +51,7 @@ public class Store {
         }
         //add catch
         catch (Exception e) {
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
             System.out.println("Error Loading");
         }
     }
@@ -67,11 +67,80 @@ public class Store {
         for (Product product : inventory) {
             if(product.getName().toLowerCase().contains(keyword.toLowerCase())
                 ||
-                    product.getDepartment().toLowerCase().contains(keyword.toLowerCase()) {
+                    product.getDepartment().toLowerCase().contains(keyword.toLowerCase())) {
                 //print sout
                 System.out.println(product);
             }
         }
     }
 
+    //add to cart
+    public void addToCart(String sku) {
+
+        Product foundProduct = null;
+
+        for (Product product : inventory) {
+
+            if (product.getSku().equalsIgnoreCase(sku)) {
+                foundProduct = product;
+                break;
+            }
+        }
+
+        if (foundProduct == null) {
+
+            System.out.println("Product not found.");
+            return;
+        }
+
+        // check existing cart item
+        for (CartItems item : cartItems) {
+
+            if (item.getProduct().getSku().equalsIgnoreCase(sku)) {
+
+                item.increaseQuantity();
+
+                System.out.println("Quantity updated.");
+                return;
+            }
+        }
+
+        boolean add = cartItems.add(new CartItems(foundProduct)){;
+
+
+        System.out.println("Added to cart.");
+    }}
+
+    // DISPLAY CART
+    public void displayCart() {
+
+        double total = 0;
+
+        for (CartItems item : cartItems) {
+
+            System.out.println(item.getProduct().getName() + " x" + item.getQuantity() + " = $" + item.getLineTotal());
+            total += item.getLineTotal();
+        }
+
+        System.out.println("Cart Total: $" + total);
+    }
+
+    // REMOVE PRODUCT
+    public void removeFromCart(String sku) {
+
+        for (CartItems item : cartItems) {
+
+            if (item.getProduct().getSku().equalsIgnoreCase(sku)) {
+
+                cartItems.remove(item);
+
+                System.out.println("Removed from cart.");
+
+                return;
+            }
+        }
+
+        System.out.println("Product not found in cart.");
+    }
 }
+
