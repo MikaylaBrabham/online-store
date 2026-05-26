@@ -50,5 +50,9 @@ public class Store {
             reader.close();
         }
         //add catch
+        catch (Exception e) {
+            throw new RuntimeException(e);
+            System.out.println("Error Loading");
+        }
     }
 }
