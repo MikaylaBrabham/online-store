@@ -105,11 +105,12 @@ public class Store {
             }
         }
 
-        boolean add = cartItems.add(new CartItems(foundProduct)){;
+        boolean add = cartItems.add(new CartItems(foundProduct));
 
 
-        System.out.println("Added to cart.");
-    }}
+            System.out.println("Added to cart.");
+
+    }
 
     // DISPLAY CART
     public void displayCart() {

@@ -10,7 +10,7 @@ public class CartItems {
 
     //add constructor
 
-    public CartItems(Product product, int quantity) {
+    public CartItems(Product product) {
         this.product = product;
         this.quantity = quantity;
     }
