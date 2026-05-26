@@ -63,5 +63,15 @@ public class Store {
     }
 
     //search products
+    public void searchProducts(String keyword) {
+        for (Product product : inventory) {
+            if(product.getName().toLowerCase().contains(keyword.toLowerCase())
+                ||
+                    product.getDepartment().toLowerCase().contains(keyword.toLowerCase()) {
+                //print sout
+                System.out.println(product);
+            }
+        }
+    }
 
 }
