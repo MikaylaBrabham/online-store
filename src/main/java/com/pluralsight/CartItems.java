@@ -37,8 +37,12 @@ public class CartItems {
 
     // add increasequantity
 public void increaseQuantity() {
-        qu
+        quantity++;
 }
 
     //add get line total
+    public double getLineTotal() {
+        return quantity * product.getPrice();
+
+    }
 }
